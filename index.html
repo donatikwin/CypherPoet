@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CypherPoet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Orbitron:wght@700&display=swap');
+      body {
+        font-family: 'Roboto Mono', monospace;
+      }
+      .font-orbitron {
+        font-family: 'Orbitron', sans-serif;
+      }
+      .text-glow {
+        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #0ff, 0 0 25px #0ff;
+      }
+      .glitch {
+        position: relative;
+        color: #00f0ff;
+        animation: glitch 5s infinite;
+      }
+      @keyframes glitch {
+        2%,64% {
+          transform: translate(2px,0) skew(0deg);
+        }
+        4%,60% {
+          transform: translate(-2px,0) skew(0deg);
+        }
+        62% {
+          transform: translate(0,0) skew(5deg); 
+        }
+      }
+      .glitch:before,
+      .glitch:after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        overflow: hidden;
+      }
+      .glitch:before {
+        left: 2px;
+        text-shadow: -2px 0 #ff00c1;
+        animation: glitch-anim-1 2s infinite linear alternate-reverse;
+      }
+      .glitch:after {
+        left: -2px;
+        text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+        animation: glitch-anim-2 2s infinite linear alternate-reverse;
+      }
+      @keyframes glitch-anim-1 {
+        0% { clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%); }
+        10% { clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%); }
+        20% { clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%); }
+        30% { clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%); }
+        40% { clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%); }
+        50% { clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%); }
+        60% { clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%); }
+        70% { clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%); }
+        80% { clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%); }
+        90% { clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%); }
+        100% { clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%); }
+      }
+      @keyframes glitch-anim-2 {
+        0% { clip-path: polygon(0 5%, 100% 5%, 100% 6%, 0 6%); }
+        10% { clip-path: polygon(0 8%, 100% 8%, 100% 8%, 0 8%); }
+        20% { clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%); }
+        30% { clip-path: polygon(0 25%, 100% 25%, 100% 25%, 0 25%); }
+        40% { clip-path: polygon(0 40%, 100% 40%, 100% 41%, 0 41%); }
+        50% { clip-path: polygon(0 52%, 100% 52%, 100% 52%, 0 52%); }
+        60% { clip-path: polygon(0 60%, 100% 60%, 100% 61%, 0 61%); }
+        70% { clip-path: polygon(0 75%, 100% 75%, 100% 75%, 0 75%); }
+        80% { clip-path: polygon(0 85%, 100% 85%, 100% 86%, 0 86%); }
+        90% { clip-path: polygon(0 90%, 100% 90%, 100% 95%, 0 95%); }
+        100% { clip-path: polygon(0 98%, 100% 98%, 100% 99%, 0 99%); }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-black text-gray-200">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
