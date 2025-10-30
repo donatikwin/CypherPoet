@@ -1,5 +1,9 @@
 <div align="center">
-  <img src="./cypherpoetREAME.png" alt="CypherPoet Logo" width="600"/>
+  <img 
+    src="https://raw.githubusercontent.com/donatikwin/CypherPoet/main/cypherpoetREADME.png" 
+    alt="CypherPoet Logo" 
+    width="600"
+  />
   <br/>
   <p style="color:#00FFFF; font-family:monospace; font-size:1.2em;">Децентрализованные стихи из цифровой тени.</p>
   <br/>
